@@ -1,8 +1,8 @@
 // example of async handler using async-await
 // https://github.com/netlify/netlify-lambda/issues/43#issuecomment-444618311
-
 import fetch from 'node-fetch';
-export async function handler(event, context) {
+
+export async function handler(event: any, context: any) {
   try {
     const response = await fetch('https://api.chucknorris.io/jokes/random');
     if (!response.ok) {

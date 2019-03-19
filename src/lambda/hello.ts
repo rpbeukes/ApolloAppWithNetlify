@@ -2,7 +2,7 @@
 const obj = {
   foo: 'bar'
 };
-export function handler(event, context, callback) {
+export function handler(event: any, context: any, callback: any) {
   console.log('queryStringParameters', event.queryStringParameters);
   callback(null, {
     statusCode: 200,
