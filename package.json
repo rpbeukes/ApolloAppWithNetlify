@@ -3,13 +3,14 @@
   "version": "0.4.0",
   "private": true,
   "dependencies": {
+    "apollo-server-lambda": "^2.4.8",
+    "graphql": "^14.1.1",
     "node-fetch": "^2.3.0",
     "react": "^16.8.0-alpha.0",
     "react-dom": "^16.8.0-alpha.0",
     "react-scripts": "^2.1.8"
   },
   "scripts": {
-    "preinstall": "npm i -g netlify-lambda && npm i -g npm-run-all",
     "start": "run-p start:**",
     "start:app": "react-scripts start",
     "start:lambda": "netlify-lambda serve src/lambda",
