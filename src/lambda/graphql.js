@@ -15,7 +15,7 @@ const resolvers = {
 };
 
 const server = new ApolloServer({
-  introspection: true,
+  introspection: true, //shows the Schema help
   playground: true,
   typeDefs,
   resolvers
