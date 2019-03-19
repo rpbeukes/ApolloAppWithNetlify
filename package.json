@@ -13,10 +13,10 @@
   "scripts": {
     "start": "run-p start:**",
     "start:app": "react-scripts start",
-    "start:lambda": "netlify-lambda serve src/lambda",
+    "start:lambda": "tsc && netlify-lambda serve src/lambda/dist/lambda",
     "build": "run-p build:**",
     "build:app": "react-scripts build",
-    "build:lambda": "tsc && netlify-lambda build src/lambda/dist",
+    "build:lambda": "tsc && netlify-lambda build src/lambda/dist/lambda",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "compile": "tsc"
