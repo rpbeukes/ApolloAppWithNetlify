@@ -1,1 +1,1 @@
-# ApolloAppWithNetlify
+# Apollo App With Netlify
