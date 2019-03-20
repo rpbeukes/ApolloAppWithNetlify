@@ -12,14 +12,19 @@
   },
   "scripts": {
     "start": "run-p start:**",
-    "start:app": "react-scripts start",
-    "start:lambda": "tsc && netlify-lambda serve src/lambda/dist/lambda",
+    "startApp":"react-scripts start",
+    "start:app": "npm run-script build:app && react-scripts start",
+    "start:lambda": "npm run-script compile && netlify-lambda serve dist/lambda",
     "build": "run-p build:**",
     "build:app": "react-scripts build",
-    "build:lambda": "tsc && netlify-lambda build src/lambda/dist/lambda",
+    "build:lambda": "npm run-script compile && netlify-lambda build dist/lambda && npm run clear-ts-lambda",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "compile": "tsc"
+    "compile": "tsc --build tsconfig.lambda.json",
+    "clear": "rm -rf ./lambda && rm -rf ./dist && rm -rf ./build",
+    "clear-ts-lambda": "rm -rf ./dist",
+    "backup": "cp tsconfig.json tsconfig.json.copy",
+    "restore": "cp tsconfig.json.copy tsconfig.json"
   },
   "eslintConfig": {
     "extends": "react-app"
