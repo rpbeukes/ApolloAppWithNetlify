@@ -1,20 +1,23 @@
-import { React, Component } from 'react';
+import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
 class LambdaDemo extends Component {
-  constructor(props) {
+  
+  public state: { loading: boolean, msg?: string | null };
+
+  constructor(props: any) {
     super(props);
     this.state = { loading: false, msg: null };
   }
 
-  handleClick = api => e => {
+  handleClick = (api: string) => (e: { preventDefault: () => void; }) => {
     e.preventDefault();
 
     this.setState({ loading: true });
     fetch('/.netlify/functions/' + api)
       .then(response => response.json())
-      .then(json => this.setState({ loading: false, msg: json.msg }));
+      .then(jsonData => this.setState({ loading: false, msg: jsonData.msg }));
   };
 
   render() {

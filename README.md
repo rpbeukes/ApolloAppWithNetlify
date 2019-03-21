@@ -19,3 +19,8 @@ const server = new ApolloServer({
   resolvers,
 })
 ```
+
+### Proxy issues 
+* `setupProxy.ts` is there but I could not get it to work when typescript format
+* Instead, I ran `tsc` (ts compiler) and copy the js file to my `./src` folder
+* Seems by doing that `react-scripts start` did it's magic (I guess).
