@@ -1,8 +1,10 @@
+import { Context, Callback, APIGatewayProxyEvent } from "aws-lambda";
+
 // show object spread works, i.e. babel works
 const obj = {
   foo: 'bar'
 };
-export function handler(event: any, context: any, callback: any) {
+export function handler(event: APIGatewayProxyEvent, context: Context, callback: Callback) {
   console.log('queryStringParameters', event.queryStringParameters);
   callback(null, {
     statusCode: 200,
